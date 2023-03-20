@@ -17,6 +17,22 @@ func main() {
 	u3.name = "Pasha"
 	u3.age = 32
 	println(u3.String())
+
+	// Указатели
+
+	u4 := &user{name: "Sergey", age: 31}
+	println(u4.String())
+	u4.ChangeNameByPointer()
+	println(u4.String())
+	u4.ChangeAgeByValue()
+	println(u4.String())
+}
+func (u *user) ChangeNameByPointer() {
+	u.name = "-"
+}
+
+func (u user) ChangeAgeByValue() {
+	u.age = 0
 }
 
 func (u *user) String() string {
